@@ -1,6 +1,11 @@
-FROM node:18-alpine
+FROM node:18.20.8-bookworm
+
 WORKDIR /app
-COPY package.json .
-RUN npm install
+
+COPY *.json .
+
+RUN npm i
+
 COPY . .
-CMD npm start
+
+CMD ["npm","start"]
